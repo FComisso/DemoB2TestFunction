@@ -12,7 +12,7 @@ def http_trigger_eco(req: func.HttpRequest) -> func.HttpResponse:
         try:
             req_body = req.get_json()
         except ValueError:
-            pass
+            pass 
         else:
             name = req_body.get('name')
 
