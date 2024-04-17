@@ -46,7 +46,6 @@ jobs:
           path: |
             release.zip
             !venv/
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -65,11 +64,11 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip     
         
-    - name: 'Log into Azure using github secret AZURE_CREDENTIALS'
-      uses: Azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        enable-AzPSSession: true
+      - name: 'Log into Azure using github secret AZURE_CREDENTIALS'
+        uses: Azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          enable-AzPSSession: true
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
