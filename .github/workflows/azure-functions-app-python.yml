@@ -73,7 +73,7 @@ jobs:
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'api-test-sky-openai-b2-v2'
+          app-name: 'demotfb2sky-python-example-app'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           scm-do-build-during-deployment: true
